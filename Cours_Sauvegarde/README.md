@@ -3,3 +3,4 @@
 
 ##Application.PersistantDataPath(user/appdata/...)
 
+##System.Enovironnement -> Enum folder paths etc
