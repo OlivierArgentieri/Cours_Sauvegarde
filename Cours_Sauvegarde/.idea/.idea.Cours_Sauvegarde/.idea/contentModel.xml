@@ -9,6 +9,7 @@
         <e p="Save" t="Include">
           <e p="Scripts" t="Include">
             <e p="Save" t="Include">
+              <e p="SV_BaseURL.cs" t="Include" />
               <e p="SV_GameData.cs" t="Include" />
               <e p="SV_GameSettingsSaveData.cs" t="Include" />
               <e p="SV_PlayerSaveData.cs" t="Include" />

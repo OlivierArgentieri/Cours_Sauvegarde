@@ -6,15 +6,7 @@ using UnityEngine;
 [Serializable]
 public class SV_ProfileData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #region f/p
+    
+    #endregion
 }
