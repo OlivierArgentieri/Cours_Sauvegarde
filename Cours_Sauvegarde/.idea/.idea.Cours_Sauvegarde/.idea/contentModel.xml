@@ -8,6 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Save" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Data" t="Include">
+              <e p="SV_BaseData.cs" t="Include" />
+            </e>
             <e p="Save" t="Include">
               <e p="SV_BaseURL.cs" t="Include" />
               <e p="SV_GameData.cs" t="Include" />

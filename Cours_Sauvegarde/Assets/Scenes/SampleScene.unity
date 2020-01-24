@@ -246,6 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2748a2f260148dc4c94f669c395de530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentUser:
+    userPseudo: Nunutte
+  allGameUsers: []
+  progress: 0
 --- !u!4 &480128299
 Transform:
   m_ObjectHideFlags: 0
