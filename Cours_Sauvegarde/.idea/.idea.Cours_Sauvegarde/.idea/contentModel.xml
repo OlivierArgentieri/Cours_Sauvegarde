@@ -16,8 +16,10 @@
               <e p="SV_GameData.cs" t="Include" />
               <e p="SV_GameSettingsSaveData.cs" t="Include" />
               <e p="SV_GameUser.cs" t="Include" />
+              <e p="SV_LoadData.cs" t="Include" />
               <e p="SV_PlayerSaveData.cs" t="Include" />
               <e p="SV_ProfileData.cs" t="Include" />
+              <e p="SV_SaveData.cs" t="Include" />
             </e>
           </e>
         </e>

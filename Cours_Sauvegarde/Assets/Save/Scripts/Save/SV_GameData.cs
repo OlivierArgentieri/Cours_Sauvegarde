@@ -12,11 +12,12 @@ public class SV_GameData : MonoBehaviour
     public event Action<float> OnLoadingProgress = null;
     
     private int loadingStep = 0;
-    private int loadingMaxStep = 1;
-    [SerializeField] SV_ProfileData profileData = new SV_ProfileData();
+    private int loadingMaxStep = 4;
     [SerializeField] SV_GameUser currentUser = new SV_GameUser();
     [SerializeField] List<SV_GameUser> allGameUsers = new List<SV_GameUser>();
     [SerializeField, Range(0,100)] float progress = 0;
+    [SerializeField] private Transform playerTransform = null;
+
     public float LoadingProgress => (progress = (float) loadingStep / loadingMaxStep);
     #endregion
 
@@ -33,6 +34,11 @@ public class SV_GameData : MonoBehaviour
         yield return StartCoroutine(getAllGameUsers(SV_BaseURL.ProfilePath));
         if(allGameUsers.Count == 0) yield break;
         yield return StartCoroutine(CreateUserEnvironment(allGameUsers[0]));
+        yield return StartCoroutine(LoadSave(currentUser.UserSave, playerTransform));
+        
+        yield return new WaitForSeconds(5);
+        currentUser.SaveUser();
+        
     }
 
     private void OnDestroy()
@@ -94,12 +100,19 @@ public class SV_GameData : MonoBehaviour
         OnLoadingProgress?.Invoke(LoadingProgress);
     }
 
+    IEnumerator LoadSave(string _currentSave, Transform playerTrnasform)
+    {
+        if(String.IsNullOrEmpty(_currentSave)) yield break;
+        SV_SaveData _save = new SV_SaveData(_currentSave);
+        currentUser.SetCurrentSave(_save, playerTrnasform);
+        loadingStep++;
+        OnLoadingProgress?.Invoke(LoadingProgress);
+    }
+
     void ShowProgress(float _gameProfilesFolder)
     {
         
     }
     #endregion
-    // Start is called before the first frame update
-
 }
 
